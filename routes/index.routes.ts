@@ -5,7 +5,7 @@ const routes: Router = express.Router();
 routes.get("/ping", pingCall);
 routes.post("/submit", formSubmission);
 routes.get("/read", getResult);
-routes.post("/search", searchByEmail);
+routes.get("/search", searchByEmail);
 routes.put("/edit", editData);
 routes.delete("/delete", deleteData);
 

@@ -15,7 +15,7 @@ export const formSubmission = async (req: Request, res: any) => {
 
     userId += 1;
 
-    fs.readFile("db.json", "utf8", (err: any, data: any) => {
+    fs.readFile("db.json", "utf8", (err: any, data: string) => {
       if (err) {
         console.error(err);
         return res
@@ -25,7 +25,7 @@ export const formSubmission = async (req: Request, res: any) => {
 
       let submissions = JSON.parse(data || "[]");
       submissions.push(newSubmission);
-      submissions.push(userId);
+      // submissions.push(userId);
 
       fs.writeFile(
         "db.json",
@@ -46,6 +46,7 @@ export const formSubmission = async (req: Request, res: any) => {
       );
     });
   } catch (err: any) {
+    console.log("Errororor: ", err)
     res.status(500).json({ status: false, message: "Internal server error" });
   }
 };
@@ -53,7 +54,7 @@ export const formSubmission = async (req: Request, res: any) => {
 export const getResult = async (req: any, res: any) => {
   try {
     const index = parseInt(req.query.index, 10);
-
+    console.log(index)
     if (isNaN(index)) {
       return res
         .status(400)
@@ -107,7 +108,7 @@ export const searchByEmail = async (req: any, res: any) => {
 
       let submissions = JSON.parse(data || "[]");
       const results = submissions.filter(
-        (submission: any) => submission.email === email
+        (submission: any) => submission.Email === email
       );
 
       if (results.length === 0) {
@@ -130,8 +131,8 @@ export const searchByEmail = async (req: any, res: any) => {
 
 export const editData = async (req: any, res: any) => {
   try {
-    const index = parseInt(req.body.index, 10);
-    const updatedSubmission = req.body.updatedSubmission;
+    const index = parseInt(req.query.index, 10);
+    const updatedSubmission = req.body;
 
     if (isNaN(index)) {
       return res
@@ -193,7 +194,7 @@ export const editData = async (req: any, res: any) => {
 
 export const deleteData = async (req: any, res: any) => {
   try {
-    const index = parseInt(req.body.index, 10);
+    const index = parseInt(req.query.index, 10);
 
     if (isNaN(index)) {
       return res

@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "John Doe",
+    "Email": "johndoe@gmail.com",
+    "Phone Num": 9886789913,
+    "Github Link": "https://github.com/johndoe"
+  },
+  {
+    "Name": "Tourist Man",
+    "Email": "touristman@gmail.com",
+    "Phone Num": 9876789874,
+    "Github Link": "https://github.com/touristman"
+  }
+]
