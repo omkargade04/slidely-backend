@@ -59,3 +59,7 @@ To install and run this project locally, add the following commands in your term
 ```
 
 8. Open `http://localhost:5000` on your API test(ex: `POSTMAN`) to view the test the APIs
+
+9. Below is the link to the documentation of the endpoints
+[Postman Documentation Link:](https://documenter.getpostman.com/view/27201705/2sA3XTfLQ8)
+
