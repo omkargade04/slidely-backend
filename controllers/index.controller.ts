@@ -77,11 +77,13 @@ export const getResult = async (req: any, res: any) => {
           .json({ status: false, message: "Submission not found" });
       }
 
-      res.status(200).json({
-        status: true,
-        data: submissions[index],
-        message: "Data retrieved successfully3",
-      });
+      res.json(submissions[index])
+
+      // res.status(200).json({
+      //   status: true,
+      //   data: submissions[index],
+      //   message: "Data retrieved successfully3",
+      // });
     });
   } catch (err: any) {
     res.status(500).json({ status: false, message: "Internal server error" });
