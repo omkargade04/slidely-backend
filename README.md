@@ -14,9 +14,9 @@ This project contains endpoint for slidely frontend
 
  - /read - A `GET` request with query parameter "index" which is a 0-index for reading the (index+1)th form submission.
 
- -/edit - A `PUT` request with with query parameter "index" which is a 0-index for editing the (index+1)th form submission.
+ - /edit - A `PUT` request with with query parameter "index" which is a 0-index for editing the (index+1)th form submission.
 
- -/delete - A `DELETE` request with with query parameter "index" which is a 0-index for deleting the (index+1)th form submission.
+ - /delete - A `DELETE` request with with query parameter "index" which is a 0-index for deleting the (index+1)th form submission.
  
 
 # Installation
